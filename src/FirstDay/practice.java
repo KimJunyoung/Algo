@@ -1,30 +1,16 @@
 package FirstDay;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+
+
+import java.util.*;
+import java.util.stream.Stream;
+
+
 public class practice {
-    public static void main(String[] args) throws FileNotFoundException {
-        System.setIn(new FileInputStream("src/input.txt"));
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {
 
-        String a = sc.nextLine();
-        String b = sc.nextLine();
+        ArrayList<String> arr = new ArrayList<String>(Arrays.asList("Java", "C++", "Python", "Scala", "Go"));
 
-        int count = 0;
-        int startIndex =0;
-        int findIndex = 0;
-
-        while(true){
-            findIndex = a.indexOf(b, startIndex);
-            if(findIndex<0){
-                break;
-            }
-            startIndex = findIndex + b.length();
-            count ++;
-        }
-
-        System.out.println(count);
-
-
+       Optional<String> ele = arr.stream().findAny(); // Optional[Java]
+        System.out.println(ele.get());
     }
 }
