@@ -16,7 +16,38 @@ public class PartSUm {
         int arr[] = new int[N];
 
         for(int i=0; i<N; i++){
-
+            arr[i] = sc.nextInt();
         }
+
+        // 투포인터
+        int rightIndex = 0;
+        long sum = 0;
+        int count = 0;
+        long lowCount = 1000000000;
+
+        for(int i=0; i<N; i++){
+
+            while(sum < S && rightIndex < N){
+                sum += arr[rightIndex++];
+                count ++;
+            }
+
+            if(sum >= S){
+                lowCount = Math.min(lowCount, count);
+            }
+
+            sum -= arr[i];
+            count --;
+        }
+
+        if(lowCount == 1000000000){
+            System.out.println(0);
+        }else{
+            System.out.println(lowCount);
+        }
+
+
+
     }
+
 }
