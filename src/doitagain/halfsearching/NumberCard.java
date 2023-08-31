@@ -2,13 +2,15 @@ package doitagain.halfsearching;
 
 import java.io.*;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class NumberCard {
     public static void main(String[] args) throws IOException {
         System.setIn(new FileInputStream("src/input.txt"));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-
+        Map<String, Integer> check = new HashMap<>();
         // 입력 값
         int N = Integer.parseInt(br.readLine());
         String[] firstArrayInput = br.readLine().split(" ");
