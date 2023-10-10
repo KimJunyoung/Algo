@@ -47,7 +47,7 @@ public class Stra {
         // Maxcount 값을 구하자.
 
         int maxCount = Integer.MIN_VALUE;
-gi
+
        for(int i=0; i<8002; i++){
            if(check[i] <= 0) continue;
 
